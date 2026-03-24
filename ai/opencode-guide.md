@@ -63,6 +63,24 @@ The output will be,
 {"result":"Hello, World!"}
 ```
 
+# Link Files/Folders for Context
+
+Run the agent **inside a project directory**:
+
+```bash
+opencode run --dir . # run inside the directory
+opencode run --dir ~/projects/myapp "Explain this codebase" # run inside the specific directory
+```
+
+You can also attach files:
+
+```bash
+opencode run -f main.rs -f Cargo.toml "Explain how this program works" # attach specific files for context
+```
+
+Now it behaves like a **local code assistant**. It can read your files, understand the codebase, and give you insights and help you with coding tasks.
+
+
 
 
 
