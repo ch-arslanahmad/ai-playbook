@@ -37,3 +37,32 @@ It becomes a **terminal AI conversation** instead of one-shot commands. Much smo
 
 
 This is especially useful for quick tasks or when you want to integrate it into scripts.
+
+## Scripting with OpenCode
+
+On the topic of scripts, you can also use it in a more structured way with the `--format json` flag, which outputs the response in JSON format, making it easier to parse and use in other tools.
+
+```bash
+opencode run "Introduce how knowing github, gitlab and version control is nothing special" --format json
+```
+or
+
+```bash
+opencode run --format json "Introduce how knowing github, gitlab and version control is nothing special"
+```
+
+### API OpenCode (scripting, dev tools, etc)
+
+```bash
+opencode run "say 'Hello, World!'" --format json | jq -c 'select(.type=="text") | {result: .part.text}'
+```
+
+The output will be,
+
+```output
+{"result":"Hello, World!"}
+```
+
+
+
+
