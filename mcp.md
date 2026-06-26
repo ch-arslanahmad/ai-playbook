@@ -22,11 +22,11 @@ These are also called connectors in some platforms.
 
 > [!note]
 > **Claude Desktop** has no built-in tools for read/write/execute within filesystem, it relies entirely on MCP servers for filesystem, git, bash, etc. In contrast, **Claude Code** and **OpenCode** and other AI-agents ship with native tools (`Read`, `Write`, `Edit`, `Bash`, etc.) and use MCP only for external services (databases, APIs, etc.).
-> Learn about [tools](tools.md) here.
+> Learn about [tools](ai/tools.md) here.
 
-The reason i told you about the tools with MCP is that, MCP are external tools that are not built-in to the AI model, agent or harness.
+The reason I told you about the tools with MCP is that MCP servers are external tools not built-in to the AI model, agent, or harness.
 
-For example, if you want to access a database, or perform web scraping, or automate a browser, you would use an MCP server that exposes those capabilities, which is different for each agent like:
+For example, if you want to access a database, perform web scraping, or automate a browser, you would use an MCP server that exposes those capabilities:
 
 - Claude Desktop → uses MCP for filesystem, git, bash, etc.
 - OpenCode → uses MCP for external services like databases, APIs, etc.
@@ -39,6 +39,9 @@ For example, if you want to access a database, or perform web scraping, or autom
 - **Exa**: Neural web search, code search, also available as a tool in OpenCode (`websearch` tool) & Charm's Crush
 - **Firecrawl**: Web scraping, content extraction
 - **Puppeteer**: Headless Chrome operations
+- [**GitHub MCP**](https://github.com/github/github-mcp-server): Issues, PRs, repos — however installing `gh` CLI is faster & better in most cases.
+
+See more online or on GitHub.
 
 ## Configuration
 
@@ -142,9 +145,3 @@ MCP supports two transports.
 ---
 
 
-## Popular MCP Servers
-
-- [Context7 MCP](https://context7.com/)
-- [GitHub](https://github.com/github/github-mcp-server), issues, PRs, repos, however install `gh` cli is faster & better in most cases.
-
-See more online or on GitHub.
