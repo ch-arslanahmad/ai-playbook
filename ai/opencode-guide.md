@@ -20,8 +20,8 @@ It works inside the terminal but allows you to manage AI models, run conversatio
 | ------------------- | ------------------------------------------------------------------------------------------- |
 | **Config (Global)** | `~/.config/opencode/opencode.json`                                                          |
 | **Config (Local)**  | `.opencode/opencode.jsonc` or `.opencode/opencode.json` (project root)                      |
-| \*\*Agents          | `~/.config/opencode/agents/<name>.md`                                                       |
-| \*\*Skills          | `~/.config/opencode/skills/<name>/SKILL.md`, also supports ~/.claude/skills/<name>/SKILL.md |
+| **Agents**          | `~/.config/opencode/agents/<name>.md`                                                       |
+| **Skills**          | `~/.config/opencode/skills/<name>/SKILL.md`, also supports ~/.claude/skills/<name>/SKILL.md |
 | **Project Config**  | `.opencode/opencode.jsonc` or `AGENTS.md`                                                   |
 
 **Load order:** Local config loads first, then global. Duplicate plugins with same name load once.
@@ -45,16 +45,30 @@ Some basic commands to get you started:
 
 But actually useful commands are as follows:
 
-| Command     | Description                                               |
-| ----------- | --------------------------------------------------------- | ------ | --- |
-| `/compact`  | Compact the current session                               |
-| `/review`   | Review the current session, default uncommited,options commit,branch,pr  |
-| `/export`   | Export chat context as Markdown                           |
-| `/new`      | Start new session                                         |
-| `/variants` | List and switch between model variants (some unsupported) |
-| `/agents`   | List all agents (only primary)                            |
-| `/mcp`      | List MCP servers                                          |
-| `/status`   | View mcp servers, formatters, installed plugins         |
+| Command     | Description                                                                 |
+| ----------- | --------------------------------------------------------------------------- |
+| `/compact`  | Compact the current session                                                 |
+| `/review`   | Review the current session, default uncommitted, options commit, branch, pr |
+| `/export`   | Export chat context as Markdown                                             |
+| `/new`      | Start new session                                                           |
+| `/variants` | List and switch between model variants (some unsupported)                   |
+| `/agents`   | List all agents (only primary)                                              |
+| `/mcps`     | List & toggle MCP servers (spacebar to enable/disable)                      |
+| `/status`   | View active MCPs, formatters, installed plugins                             |
+
+### MCP Server Toggle
+
+OpenCode has MCP toggle built-in — use `/mcps` then press **spacebar** to enable/disable any server.
+
+You can also set `"enabled": true/false` per server in `opencode.json`, or use the `"tools"` config with glob patterns for per-agent control.
+
+OpenCode has built-in MCP toggle functionality, no need to remove servers from config:
+
+- **Config toggle**: Set `"enabled": true/false` per MCP in `opencode.json`
+- **`/mcps` TUI command**: Lists all MCP servers with spacebar toggle (on/off)
+- **`/status` command**: Shows which MCP servers are active
+- **Per-agent tool control**: Disable globally via `"tools": {"mcp-name": false}`, enable per-agent in agent config
+- **Glob patterns**: `"tools": {"my-mcp*": false}` to batch disable
 
 You can also define your own custom commands.
 
@@ -79,33 +93,26 @@ One of the useful commands there in commands menu are:
 - Stash pop
 - Stash list
 
-They do not have keybindings or shorcuts yet.
+They do not have keybindings or shortcuts yet.
 
 ## OpenCode CLI Guide
 
 Before you give any prompt to opencode you may want to set up the model you want to use,
 Opencode provides you with some free models to choose from, and you can also add your own custom models.
 
-To add your own,
+To add your own, open OpenCode and type,
 
 ```bash
-opencode /connect       # Add provider API key or its setup
-opencode /init          # Create AGENTS.md for project
+/connect       # Add provider API key or its setup
+/init          # Create AGENTS.md for project
 ```
 
 To open the TUI, just run:
 
 ```bash
-opencode run
-```
-
-It will open a terminal UI where you can interact with the AI.
-
-You can also run one-shot commands directly from the terminal without opening the TUI.
-
-```bash
-opencode run "$prompt"
-opencode run $prompt
+opencode # open the TUI
+# OR
+opencode run "$prompt" # send a message without opening the TUI
 ```
 
 `-c` = **continue last session**
@@ -113,7 +120,7 @@ opencode run $prompt
 So instead of starting over, you can continue from where you left off.
 
 ```bash
-
+opencode -c # to continue the last TUI session
 opencode run "Explain git branches simply"
 opencode run -c "Now give an example"
 
@@ -185,15 +192,15 @@ You can export chat context in two ways:
 
 If no session ID is provided, you'll be prompted to select a session.
 
-
 Learn about all [OpenCode CLI commands](https://opencode.ai/docs/cli/) and [TUI features](https://opencode.ai/docs/tui/).
 
-
+```bash
 opencode run \
   --model provider/model \
   --dangerously-skip-permissions \
   --format json \
   "your question - answer only yes or no"
+```
 
 ## Agents
 

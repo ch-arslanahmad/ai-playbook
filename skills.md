@@ -155,7 +155,7 @@ The table below lists each tool's own directories on top of that:
 
 ### [Everything Claude Code (ECC)](https://github.com/affaan-m/ecc)
 
-### [awesome-opencode-skills](https://github.com/TheArchitectit/awesome-opencode-skills.git)
+### [awesome-opencode-skills](https://github.com/TheArchitectit/awesome-opencode-skills)
 
 A community skill marketplace — 25+ skills in categories: development, document processing, security, creative, productivity, business/marketing, writing, MCP.
 
@@ -172,7 +172,7 @@ A community skill marketplace — 25+ skills in categories: development, documen
 Also ships MCP servers (TS + Python) for managing skills from within OpenCode.
 
 > [!note]
-> As i daily drive OpenCode, I have curated a collection of skills thats why, i referenced `awesome-opencode-skills` repo is a curated collection of skills for OpenCode, however you may use it with any other tool as well.
+> As I daily drive OpenCode, I have curated a collection of skills that's why I referenced the `awesome-opencode-skills` repo, it's a curated collection of skills for OpenCode, however you may use it with any other tool as well.
 
 ## My Install Skills
 
