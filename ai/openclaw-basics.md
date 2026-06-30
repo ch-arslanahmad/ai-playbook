@@ -7,7 +7,7 @@ This is a compact reference for the commands that are actually documented on the
 
 The point of this file is to give a quick overview of the most useful commands without having to search for multiple docs for basic understanding, features, configs etc.
 
-For the most detailed reference, see [openclaw-setup-guide-i-wish-i-had](https://github.com/ishwarjha/openclaw-setup-guide-i-wish-i-had) or upto date info see official docs at [docs.openclaw.ai](https://docs.openclaw.ai).
+For the most detailed reference, see [openclaw-setup-guide-i-wish-i-had](https://github.com/ishwarjha/openclaw-setup-guide-i-wish-i-had) or for up-to-date info see official docs at [docs.openclaw.ai](https://docs.openclaw.ai).
 
 ## OpenClaw Taxonomy
 
@@ -47,23 +47,6 @@ Group chats use mention-based activation. DMs use allowlists and pairing.
 ### Providers
 
 35+ model providers. Supports OAuth subscription auth, custom endpoints, and self-hosted (Ollama & anything OpenAI/Anthropic-compatible).
-
-### Workspace files
-
-BOOTSTRAP.md. First run only.
-
-A few things are loaded for every session:
-
-- AGENTS.md
-- USER.md
-- IDENTITY.md
-- TOOLS.md
-
-When heartbeats fire, these files are loaded:
-
-- HEARTBEAT.md
-
-While MEMORY.md & memory/YYYY-MM-DD.md are loaded on demand. DREAMS.md is loaded for human review.
 
 ## Common Commands
 
@@ -134,7 +117,7 @@ Only deep promotes to MEMORY.md. A sweep is one full run through all three phase
 | ----- | -------------------------------------------------------------------------- |
 | Light | Sort and stage recent material                                             |
 | REM   | Reflect on themes and patterns                                             |
-| Deep  | Score and promote durable candidates, only phase who writes in `MEMORY.md` |
+| Deep  | Score and promote durable candidates, only phase that writes to `MEMORY.md` |
 
 Enable in config (`dreaming.enabled: true`). Default sweep: `0 3 * * *` (3 AM daily).
 
@@ -149,3 +132,9 @@ openclaw memory promote-explain "topic"  # Why it would/wouldn't promote
 ```
 
 Slash commands: `/dreaming status`, `/dreaming on`, `/dreaming off`.
+
+For full details about memory, context & workspace, see [openclaw-workspace.md](./openclaw-workspace.md).
+
+## Config tools & permissions
+
+See [openclaw-config.md](./openclaw-config.md) for `tools.profile`, `tools.exec`, sandbox config, and `config get` behavior.
