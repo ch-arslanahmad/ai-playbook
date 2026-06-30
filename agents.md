@@ -11,13 +11,13 @@ All the popular platforms have their own version of agents, generically there is
 
 Some popular platform that allows us to create custom primary agents,
 
-- **OpenCode** — Tab picker, `--agent`
-- **GitHub Copilot** — agent picker
+- **OpenCode**, Tab picker, `--agent`
+- **GitHub Copilot**, agent picker
 
 The following have subagents or session modes\*\* (no swappable primary mid-session):
 
-- **Cursor** — subagents via Task tool; built-in modes (Ask, Plan, Agent, Debug). See [Cursor](#cursor) below.
-- **Claude Code** — start as primary with `--agent` (startup only); delegate with `@name`. For example,
+- **Cursor**, subagents via Task tool; built-in modes (Ask, Plan, Agent, Debug). See [Cursor](#cursor) below.
+- **Claude Code**, start as primary with `--agent` (startup only); delegate with `@name`. For example,
 
 ```bash
 claude --agent agent-name
@@ -125,7 +125,7 @@ opencode --agent code-reviewer
 ```
 
 > [!note]
-> Both are `.md` files but they are not interchangeable. Claude Code format is more widely supported — tools like [crosstrain](https://github.com/fwdslsh/crosstrain) and [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) can convert Claude Code agents to other platforms. The reverse direction has little to no support. Write in Claude Code format first, convert when needed. See [cross-platform-agents.md](cross-platform-agents.md) for the full workflow.
+> Both are `.md` files but they are not interchangeable. Claude Code format is more widely supported, tools like [crosstrain](https://github.com/fwdslsh/crosstrain) and [agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) can convert Claude Code agents to other platforms. The reverse direction has little to no support. Write in Claude Code format first, convert when needed. See [cross-platform-agents.md](cross-platform-agents.md) for the full workflow.
 
 ---
 
@@ -181,21 +181,21 @@ opencode --agent code-reviewer
 | Gemini      | Session           | Separate session               | `GEMINI.md`                                                |
 | Codex       | Subagent          | Explicit prompt, `/agent` CLI  | `.codex/agents/*.toml`, `~/.codex/agents/`                 |
 | Cursor      | Agent + subagents | Task tool; modes in UI         | `.cursor/agents/`, rules, skills                           |
-| Crush       | Single agent      | `agent` tool (search)          | `crush.json`, skills, MCP, hooks                           |
+| Crush       | Single agent      | `agent` tool, `agentic_fetch`  | `crush.json`, skills, MCP, hooks                           |
 
 ---
 
 ## Platform Overview
 
-| Platform          | Custom primary                    | Custom subagent               | Config                                            |
-| ----------------- | --------------------------------- | ----------------------------- | ------------------------------------------------- |
-| OpenCode          | Yes                               | Yes                           | `~/.config/opencode/agents/`, `opencode.json`     |
-| Claude Code       | Partial (`--agent` at start only) | Yes                           | `~/.claude/agents/`                               |
-| Copilot / VS Code | Yes                               | Yes                           | `.github/agents/*.agent.md`, `~/.copilot/agents/` |
-| Cursor            | No                                | Yes                           | `.cursor/agents/`, rules, skills, hooks           |
-| Gemini            | Separate sessions                 | Separate sessions             | `GEMINI.md`                                       |
-| Codex             | Yes                               | Yes                           | `.codex/agents/*.toml`, `~/.codex/agents/`        |
-| Crush             | No                                | No (search-only `agent` tool) | Skills, MCP, hooks                                |
+| Platform          | Custom primary                    | Custom subagent    | Config                                            |
+| ----------------- | --------------------------------- | ------------------ | ------------------------------------------------- |
+| OpenCode          | Yes                               | Yes                | `~/.config/opencode/agents/`, `opencode.json`     |
+| Claude Code       | Partial (`--agent` at start only) | Yes                | `~/.claude/agents/`                               |
+| Copilot / VS Code | Yes                               | Yes                | `.github/agents/*.agent.md`, `~/.copilot/agents/` |
+| Cursor            | No                                | Yes                | `.cursor/agents/`, rules, skills, hooks           |
+| Gemini            | Separate sessions                 | Separate sessions  | `GEMINI.md`                                       |
+| Codex             | Yes                               | Yes                | `.codex/agents/*.toml`, `~/.codex/agents/`        |
+| Crush             | No                                | Yes (`agent` tool) | `crush.json`, skills, MCP, hooks                  |
 
 ### Cursor
 
@@ -211,6 +211,19 @@ One primary per chat. Modes:
 Spawned via Task tool with `subagent_type`, self-contained prompt. Foreground (block) or background (parallel OK). Custom: `.cursor/agents/*.md`, invoke with `/name`.
 
 - Config: `.cursor/rules/`, `.cursor/skills/` (auto-load on task match), `.cursor/hooks.json`, `~/.cursor/cli-config.json`.
+
+### Crush
+
+Single agent per session. Two native sub-agent tools:
+
+- `agent`, delegate search/exploration tasks
+- `agentic_fetch`, AI-powered URL fetch with content extraction
+
+Models invoke these tools at their own discretion, no user-side `@` or `/` commands.
+
+**Config:** `crush.json`, skills, MCP, hooks.
+
+---
 
 ### Codex
 
