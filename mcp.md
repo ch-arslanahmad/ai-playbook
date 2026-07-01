@@ -1,3 +1,8 @@
+---
+title: MCP (Model Context Protocol)
+description: Overview of MCP, protocol for connecting AI tools to external services
+---
+
 # MCP
 
 MCP means Model Context Protocol, introduced by Anthropic (Claude).
@@ -22,9 +27,9 @@ These are also called connectors in some platforms.
 
 > [!note]
 > **Claude Desktop** has no built-in tools for read/write/execute within filesystem, it relies entirely on MCP servers for filesystem, git, bash, etc. In contrast, **Claude Code** and **OpenCode** and other AI-agents ship with native tools (`Read`, `Write`, `Edit`, `Bash`, etc.) and use MCP only for external services (databases, APIs, etc.).
-> Learn about [tools](ai/tools.md) here.
+> Learn about [tools](tools.md) here.
 
-The reason I told you about the tools with MCP is that MCP servers are external tools not built-in to the AI model, agent, or harness.
+MCP servers are external tools, not built into the AI model, agent, or harness.
 
 For example, if you want to access a database, perform web scraping, or automate a browser, you would use an MCP server that exposes those capabilities:
 
@@ -39,7 +44,7 @@ For example, if you want to access a database, perform web scraping, or automate
 - **Exa**: Neural web search, code search, also available as a tool in OpenCode (`websearch` tool) & Charm's Crush
 - **Firecrawl**: Web scraping, content extraction
 - **Puppeteer**: Headless Chrome operations
-- [**GitHub MCP**](https://github.com/github/github-mcp-server): Issues, PRs, repos — however installing `gh` CLI is faster & better in most cases.
+- [**GitHub MCP**](https://github.com/github/github-mcp-server): Issues, PRs, repos. However, installing `gh` CLI is faster & better in most cases.
 
 See more online or on GitHub.
 
@@ -61,7 +66,7 @@ The configuration of any MCP regardless of the platform is done in a JSON file, 
 > [!note]
 > Unlike Skills, MCPs do not have a unified configuration file or path across platforms. Each platform has its own config file and format. The above table shows the default locations for each platform.
 
-For example, lets install Context7 MCP.
+For example, let's install Context7 MCP.
 
 ### Context7
 
@@ -143,5 +148,3 @@ MCP supports two transports.
 | Learning / debugging MCP        | HTTP      | Inspect requests/responses    |
 
 ---
-
-

@@ -1,3 +1,8 @@
+---
+title: OpenClaw Config
+description: Configuration reference for OpenClaw settings and options
+---
+
 # OpenClaw Config
 
 > Read the official docs for the most current info, this file may lag behind.

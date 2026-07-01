@@ -1,3 +1,8 @@
+---
+title: OpenClaw Workspace & Memory
+description: Agent workspace, memory, SOUL.md, dreaming, and system prompt concepts
+---
+
 # OpenClaw Workspace & Memory
 
 Sources: [Agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) · [Memory](https://docs.openclaw.ai/concepts/memory) · [SOUL.md](https://docs.openclaw.ai/concepts/soul) · [Dreaming](https://docs.openclaw.ai/concepts/dreaming) · [Commitments](https://docs.openclaw.ai/concepts/commitments) · [System prompt](https://docs.openclaw.ai/concepts/system-prompt)
@@ -79,8 +84,8 @@ When enabled, it collects short-term signals, scores candidates, and promotes on
 | Phase | Purpose                                   | Writes to MEMORY.md |
 | ----- | ----------------------------------------- | ------------------- |
 | Light | Sort and stage recent short-term material | No                  |
-| Deep  | Score and promote durable candidates      | Yes                 |
 | REM   | Reflect on themes and recurring ideas     | No                  |
+| Deep  | Score and promote durable candidates      | Yes                 |
 
 Phases run in order: light → REM → deep. Each sweep covers all configured agent workspaces, deduped by path.
 

@@ -1,20 +1,25 @@
+---
+title: Agents & Subagents
+description: Hub for agent architecture across OpenCode, Claude Code, Cursor, Crush, and other platforms
+---
+
 # Agents & Subagents
 
 ## What Are Agents?
 
 Agents are specialized AI assistants that can be invoked to handle specific tasks.
 
-All the popular platforms have their own version of agents, generically there is,
+All the popular platforms have their own version of agents. Generically, there are:
 
 - `plan` agent
 - `build` agent
 
-Some popular platform that allows us to create custom primary agents,
+Some popular platforms that allow us to create custom primary agents:
 
 - **OpenCode**, Tab picker, `--agent`
 - **GitHub Copilot**, agent picker
 
-The following have subagents or session modes\*\* (no swappable primary mid-session):
+The following have subagents or session modes (no swappable primary mid-session):
 
 - **Cursor**, subagents via Task tool; built-in modes (Ask, Plan, Agent, Debug). See [Cursor](#cursor) below.
 - **Claude Code**, start as primary with `--agent` (startup only); delegate with `@name`. For example,
@@ -113,7 +118,7 @@ permission:
 You are a senior code reviewer...
 ```
 
-Here `temperature` means random/creative the LLM's output is
+Here `temperature` controls how random/creative the LLM's output is.
 **Invoke:**
 
 ```bash
@@ -131,7 +136,7 @@ opencode --agent code-reviewer
 
 ## Agent vs skill vs AGENTS.md vs tools
 
-For isolated context / parallel work / specialist model!
+For isolated context, parallel work, or specialist model:
 
 - **subagent**
 
@@ -143,13 +148,13 @@ Always-on project conventions, context, rules.
 
 - rule / **AGENTS.md** / CLAUDE.md / `.cursor/rules/`
 
-A specialist agent needed for the whole session? like `plan` & `build`?
+A specialist agent needed for the whole session, like `plan` and `build`?
 
 - primary agent (if platform supports it, see [Platform Overview](#platform-overview) below; can also be emulated via subagents)
 
-Require a tool to do a specific task, deterministic rather than probabilistic, `database` tool for managing a local database, `search` tool for searching a locally, `websearch` for searching the web.
+Require a tool to do a specific task, deterministic rather than probabilistic, `database` tool for managing a local database, `search` tool for searching locally, `websearch` for searching the web.
 
-- Use a `tool` as they are deterministic, most commonly, we use external tools, via MCP, to do a specific task. See [mcp.md](mcp.md) for more details.
+- Use a `tool` as they are deterministic, most commonly, we use external tools, via MCP, to do a specific task. See [mcp.md](../mcp.md) for more details.
 
 ---
 
@@ -233,7 +238,7 @@ Built-in: `default`, `worker`, `explorer`.
 Custom agents: `.codex/agents/<name>.toml` (in TOML, oddly).
 
 > [!note]
-> Codex can swap agent into a different primary agent mid-session. A custom agent like `openwork` can run as a spawned subagent, or it can be the primary by using, `/agent`
+> Codex can swap agent into a different primary agent mid-session. A custom agent like `openwork` can run as a spawned subagent, or it can be the primary by using `/agent`
 
 ---
 

@@ -1,17 +1,20 @@
+---
+title: Slash Commands
+description: Custom slash commands for AI coding platforms
+---
+
 # Slash Commands
 
-A slash command can be platform-specific as well while some platforms do not have slash commands like Charm's Crush.
+A slash command can be platform-specific, and some platforms do not have slash commands like Charm's Crush.
 
-While, A slash command can be:
+A slash command can be:
 
-
-While a slash command can be:
 - a skill (like `/ask` or `/refine`)
 - a MCP prompt (like `/mcp-name {args}`)
 - a built-in command (like `/btw`, `help`, `/skills` in Claude Code)
 - a custom command file (like `/refine` in OpenCode)
 
-In some cases, it can trigger agents, subagents, tools, MCPs etc or they can act as an alias for a bigger prompt..
+In some cases, it can trigger agents, subagents, tools, MCPs etc, or they can act as an alias for a bigger prompt.
 
 
 Before,

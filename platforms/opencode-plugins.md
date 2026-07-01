@@ -1,3 +1,8 @@
+---
+title: OpenCode Plugins
+description: Plugin system for extending OpenCode with custom functionality
+---
+
 # OpenCode Plugins
 
 Learn more about [OpenCode Plugins.](https://opencode.ai/docs/plugins/)
@@ -20,7 +25,7 @@ Add to `opencode.json` (local `.opencode/` or global `~/.config/opencode/`):
 
 OpenCode auto-installs npm plugins (by default) on startup.
 
-Git URL plugins auto-install too Format is, `<name>@git+<url>` (e.g. `superpowers@git+https://github.com/obra/superpowers.git`)
+Git URL plugins auto-install too. Format is `<name>@git+<url>` (e.g. `superpowers@git+https://github.com/obra/superpowers.git`)
 
 ## Installed Plugins
 
@@ -54,7 +59,7 @@ Installed via the pnpm, `pnpm install -g opentmux`, then run opentmux in termina
 ## Quick Usage
 
 **Enable Superpowers:** `export OPENCODE_AGENT_SKILLS_SUPERPOWERS_MODE=true && opencode`. Better yet add to `.bashrc` or `.zshrc`.
-**OpenTmux:** `opentmux`, then use normally , it will open opencode in tmux and you can manage multiple sessions in one terminal window.
+**OpenTmux:** `opentmux`, then use normally, it will open opencode in tmux and you can manage multiple sessions in one terminal window.
 
 ## Popular Community Plugins
 

@@ -1,17 +1,22 @@
+---
+title: Decision Log
+description: Why certain choices were made and what problem they solve for agents
+---
+
 # DECISION.md
 
 ## Problem
 
-OpenCode (Claude etc.) or your agent keeps changing its mind, even though, a decision was already made. It suggests repeating the same discussion every session, which is frustrating and inefficient.
+OpenCode (Claude etc.) or your agent keeps changing its mind, even though a decision was already made. It tends to repeat the same discussion every session, which is frustrating and inefficient.
 
 
 ## Solution
 
-Give it a decision log. Add `DECISION.md` to your project. This file records the choices you already made so it does not keep relitigating them every session. Use three columns decision, reason, and date.
+Give it a decision log. Add `DECISION.md` to your project. This file records the choices you already made so that it does not keep relitigating them every session. Use three columns: decision, reason, and date.
 
 So agents know what you already chose & why.
 
-Follow format or something similar,
+Follow this format or something similar:
 ```
 decision | reason | date
 ```

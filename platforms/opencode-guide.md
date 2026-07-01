@@ -1,3 +1,8 @@
+---
+title: OpenCode Guide
+description: Getting started with OpenCode, CLI AI agent tool for terminal-based coding
+---
+
 # OpenCode
 
 OpenCode is a CLI tool that lets you run AI agents directly from your terminal. It's great for quick tasks, code generation, and even local code assistance.
@@ -58,11 +63,9 @@ But actually useful commands are as follows:
 
 ### MCP Server Toggle
 
-OpenCode has MCP toggle built-in — use `/mcps` then press **spacebar** to enable/disable any server.
+OpenCode has MCP toggle built-in, use `/mcps` then press **spacebar** to enable/disable any server.
 
 You can also set `"enabled": true/false` per server in `opencode.json`, or use the `"tools"` config with glob patterns for per-agent control.
-
-OpenCode has built-in MCP toggle functionality, no need to remove servers from config:
 
 - **Config toggle**: Set `"enabled": true/false` per MCP in `opencode.json`
 - **`/mcps` TUI command**: Lists all MCP servers with spacebar toggle (on/off)
@@ -85,7 +88,7 @@ You can also define your own custom commands.
 | `Ctrl+P`              | Open commands menu                 |
 | `Ctrl+T`              | Switch model variants              |
 
-Ctrl+X ↑ To open subagents when deployed within the session, then press with down arrow key to close the subagent screen, use left/right arrow key to switch screen of the subagents deployed.
+Ctrl+X then Arrow Up opens subagent screens. Down arrow closes. Left/right switches between deployed subagents.
 
 One of the useful commands there in commands menu are:
 
@@ -97,8 +100,7 @@ They do not have keybindings or shortcuts yet.
 
 ## OpenCode CLI Guide
 
-Before you give any prompt to opencode you may want to set up the model you want to use,
-Opencode provides you with some free models to choose from, and you can also add your own custom models.
+Before you give any prompt to opencode, you may want to set up the model you want to use. OpenCode provides some free models, and you can add your own custom models.
 
 To add your own, open OpenCode and type,
 
@@ -156,7 +158,7 @@ The output will be,
 {"result":"Hello, World!"}
 ```
 
-# Link Files/Folders for Context
+## Link Files/Folders for Context
 
 Run the agent **inside a project directory**:
 

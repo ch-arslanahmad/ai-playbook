@@ -1,3 +1,8 @@
+---
+title: OpenClaw Basics & CLI Reference
+description: CLI commands, agent lifecycle, and core concepts for OpenClaw
+---
+
 # OpenClaw Basics & CLI Command Reference
 
 > Version observed: 2026.3.13

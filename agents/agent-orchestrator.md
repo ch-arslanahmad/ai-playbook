@@ -1,3 +1,8 @@
+---
+title: Agent Orchestrator
+description: Task dispatcher for routing work to AI CLI tools with failover
+---
+
 # Agent Orchestrator
 
 Task dispatcher. Routes work to available AI CLI tools, tracks reliability, auto-failovers on errors. Works with single or multiple tasks, parallel or sequential.
@@ -15,9 +20,7 @@ Swap broken ones automatically.
 
 ## Original Idea: daemon idea
 
-Original plan was a Python daemon. Run in background, continuously monitor tool status.
-
-However i did not think how would the agents be called. The agent would have to call the daemon, which would have to call the tool. Too many moving parts and it would have to know that as well.
+Original plan was a Python daemon running in background, continuously monitoring tool status. However, I did not think through how agents would call it. The agent would have to call the daemon, which would have to call the tool. Too many moving parts.
 
 ```
 ┌────────────────────────────────────────┐
@@ -88,7 +91,7 @@ Return all results in organized format.
 
 ## Tool Routing
 
-First version picked random tools. Broke often, ollama with no models downloaded, gemini hitting rate limits, copilot with expired auth. Tool would fail silently, everything feels broken.
+First version picked random tools. Broke often: ollama with no models downloaded, gemini hitting rate limits, copilot with expired auth. The tool would fail silently, everything would feel broken.
 
 Added reliability tracking. Every execution updates `ai.json`:
 
@@ -151,7 +154,7 @@ Agent(
 )
 ```
 
-Works in OpenCode. For Claude Code, use the agent definition at `~/.claude/agents/agentDispatch.md`, however needs change of frontmatter.
+Works in OpenCode. For Claude Code, use the agent definition at `~/.claude/agents/agentDispatch.md`, however it needs a change of frontmatter.
 
 ## Future ideas
 

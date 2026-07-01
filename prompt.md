@@ -1,11 +1,17 @@
+---
+title: Prompt Engineering
+description: Techniques and patterns for writing effective AI prompts
+---
+
 # AI prompts
 
 ## Prompt Adders
 
-The following are prompt adders that can apply to almost every prompt and are _essential_ to get **high-quality replies, responses**. 
-All you need to do, is to add one of these three lines at the end of every prompt according to your need.
+The following are prompt adders that can apply to almost every prompt and are _essential_ to get **high-quality replies** and **responses**.
+All you need to do is add one of these three lines at the end of every prompt according to your need.
 
-The are as follows:
+They are as follows:
+
 ### 1. The Clarifier
 ```
 Ask me 5 follow-up questions, whose answers will let you help me much better.
@@ -16,7 +22,7 @@ Ask me 5 follow-up questions, whose answers will significantly improve your resp
 ```
 ### 2. The Expert
 ```
-What would the top 0.1% people in this field think about your response? 
+What would the top 0.1% of people in this field think about your response? 
 Use relevant frameworks to evaluate & suggest improvements.
 ```
 ### 3. The Challenger

@@ -1,3 +1,8 @@
+---
+title: Cross-Platform Agents
+description: Strategies for building agents that work across multiple AI platforms
+---
+
 # Cross-Platform Agents
 
 ## Strategy

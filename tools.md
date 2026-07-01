@@ -1,13 +1,18 @@
+---
+title: Tools
+description: How LLM tools work, built-in tools, custom tools, and MCP tools
+---
+
 # Tools
 
-Tools are deterministic functions the LLM can call during a session, defined schemas, one input, one output, no autonomy.
+Tools are deterministic functions the LLM can call during a session, with defined schemas, one input, one output, no autonomy.
 
 For example:
 
 - `read("file.py")` → returns file content.
 - `bash("git status")` → returns stdout.
 
-Built-in tools ship with the platform. However they are limited in functionality. A custom local tool can validate inputs, hide auth details, or enforce domain logic that `bash` can't.
+Built-in tools ship with the platform. However, they are limited in functionality. A custom local tool can validate inputs, hide auth details, or enforce domain logic that `bash` can't.
 
 MCP tools are runtime plugins. OpenCode also defines custom tools via TypeScript/JS files in the `.opencode/tools/` folder.
 
@@ -17,7 +22,7 @@ Subagent spawning is itself a tool. Claude Code has a Task tool, Gemini CLI uses
 
 **Tools** are built into the platform or defined as code files.
 
-**MCP** is a protocol for registering external tools with the LLM. It requires a running server. See [mcp.md](../mcp.md) for how it works, configuration, and transport.
+**MCP** is a protocol for registering external tools with the LLM. It requires a running server. See [mcp.md](mcp.md) for how it works, configuration, and transport.
 
 | Category   | Tools                                               | MCP                                            |
 | ---------- | --------------------------------------------------- | ---------------------------------------------- |
@@ -32,7 +37,7 @@ Subagent spawning is itself a tool. Claude Code has a Task tool, Gemini CLI uses
 >
 > - built-in tool then
 > - installable CLI tools
-> - MCPs as its crossplatform & extensive feature
+> - MCPs as it's cross-platform & extensive feature
 > - only use local tools when strictly needed.
 
 The LLM doesn't know or care if a tool is built-in or came via MCP, it just calls it.
@@ -95,9 +100,9 @@ Agent.create({
 
 ### Claude Code
 
-No native custom tools. Use MCP or encode workflows as [skills](../skills.md):
+No native custom tools. Use MCP or encode workflows as [skills](skills.md):
 
 - Docs: [docs.anthropic.com/en/docs/claude-code/skills](https://docs.anthropic.com/en/docs/claude-code/skills)
-- MCP setup: [mcp.md](../mcp.md)
+- MCP setup: [mcp.md](mcp.md)
 
 ---

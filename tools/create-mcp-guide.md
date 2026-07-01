@@ -1,3 +1,8 @@
+---
+title: Building an MCP Server
+description: Guide for creating MCP servers with tools, resources, and prompts
+---
+
 # Building an MCP Server
 
 An MCP server can have:
@@ -8,12 +13,12 @@ An MCP server can have:
 
 In practice, tools are required as they do the processing of the input and provide output while resources provide read-only data and prompts provide user-triggered message templates.
 
-Python is the most popular language with MCP with most mature support.
+Python is the most popular language with MCP, with the most mature support.
 
 When using Python you must also use Pydantic for validation. See [Pydantic validation patterns](https://github.com/ch-arslanahmad/pods/blob/main/docs/learning.md#pydantic) for Field validators, model classes, and error handling.
 
 > [!note]
-> However, note that it is better to make something a `tool` rather than a MCP server (local/remote) due to latency & speed & complexity. Hence, if it is a single action, create a `tool` or equivalent thing in your specific platform, as MCP servers is suitable for combination of related multiple tools and resources.
+> However, note that it is better to make something a `tool` rather than a MCP server (local/remote) due to latency & speed & complexity. Hence, if it is a single action, create a `tool` or equivalent thing in your specific platform, as MCP servers are suitable for combinations of related multiple tools and resources.
 > For example, a `gh` cli is better (in most cases) than `GitHub` MCP due to speed and efficiency, while MCP adds overhead in token usage, latency, speed & complexity.
 
 #### Tools
@@ -25,9 +30,9 @@ def create_entry(content: str) -> str:
     return id
 ```
 
-`@mcp.tool()` defines it as a tool, The function IS the tool
+`@mcp.tool()` defines it as a tool. The function IS the tool.
 
-These functions are actually that do some action.
+These functions do the actual work.
 
 #### Resources
 
@@ -42,9 +47,9 @@ def get_entry(id: str) -> str:
 
 ```
 
-It also includes a URI endpoint, which are like web REST APIs however due to not being HTTP, they have their own defined namespace like, `entry://`.
+It also includes a URI endpoint, which is like a web REST API; however, due to not being HTTP, it has its own defined namespace like `entry://`.
 
-You use URI when the resource is not in the web, like in our case locally in the DB.
+You use a URI when the resource is not on the web, like in our case locally in the DB.
 
 The difference between tool & resource is:
 
