@@ -1,12 +1,18 @@
 ---
 name: opencode
-description: "OpenCode CLI reference - docs index, agents, commands"
-version: "2.2.0"
+description: "OpenCode CLI reference — docs index, agents, commands, config. Use when user asks about OpenCode features, setup, configuration, or usage."
+version: "2.3"
 ---
 
 # OpenCode
 
 Quick reference. Use when user asks about OpenCode features, config, agents, etc.
+
+## References
+
+- `references/basics.md` — TUI commands, permissions, first run, tips
+- `references/cli-commands.md` — headless run, sessions, models, stats, MCP, debugging, web server
+
 
 ## Quick Start
 
@@ -60,8 +66,6 @@ OpenCode Docs `<base>` URL: https://opencode.ai/docs/
 | **Web**             | `<base>/web/ `             | Web interface                  |
 | **IDE**             | `<base>/ide/ `             | IDE integration                |
 
-Links without # anchors for cleaner reference.
-
 ---
 
 ## Agents
@@ -91,37 +95,15 @@ opencode agent create    # Interactive
 
 Or markdown: `~/.config/opencode/agents/<name>.md`
 
-## TUI Commands
+## Keybinds
 
-| Command     | Description        |
-| ----------- | ------------------ |
-| `/init`     | Initialize project |
-| `/undo`     | Undo last change   |
-| `/redo`     | Redo               |
-| `/share`    | Share conversation |
-| `/sessions` | List sessions      |
-| `/connect`  | Add provider       |
-| `/models`   | List models        |
-| `/themes`   | List themes        |
-| `/new`      | New session        |
-
-**Keybinds:** `Tab` (switch agents), `ctrl+x u` (undo), `ctrl+x r` (redo), `@filename` (reference file)
-
-## Permissions
-
-```json
-{
-  "permission": {
-    "edit": "allow|ask|deny",
-    "bash": "allow|ask|deny",
-    "webfetch": "allow|ask|deny"
-  }
-}
-```
+`Tab` (switch agents), `ctrl+x u` (undo), `ctrl+x r` (redo), `@filename` (reference file)
 
 ## Skills (SKILL.md)
 
-`~/.config/opencode/skills/<name>/SKILL.md` or `.opencode/skills/<name>/SKILL.md`
+**Preferred:** `~/.claude/skills/<name>/SKILL.md` (universal, works across tools)
+
+Also: `~/.config/opencode/skills/<name>/SKILL.md` or `.opencode/skills/<name>/SKILL.md`
 
 ## Link Validity Rule
 
@@ -133,31 +115,6 @@ If any doc link returns non-200 HTTP status, **immediately inform user** so they
 
 Check manually: `curl -s -o /dev/null -w "%{http_code}" <url>`
 
-## Web Server
+## Self-Improvement Rule
 
-```bash
-opencode web                  # Start web UI (auto-opens browser)
-opencode serve                # Start headless HTTP API server
-opencode web --port 4096      # Custom port
-opencode web --hostname 0.0.0.0  # Accessible on network
-OPENCODE_SERVER_PASSWORD=secret opencode web  # Password-protected
-```
-
-Also `opencode attach <url>` to attach TUI to a running web server.
-
-## Commands Cheatsheet
-
-```bash
-opencode models          # List all available models
-opencode providers       # Manage providers/auth
-opencode agent list      # List agents
-opencode web             # Start web UI
-opencode serve           # Start headless server
-opencode attach <url>    # Attach TUI to server
-```
-
-## Links
-
-- Main: https://opencode.ai/docs/
-- GitHub: https://github.com/anomalyco/opencode
-- Discord: https://opencode.ai/discord
+When using this skill, if you see documentation that is incorrect, outdated, or lacking — fix it directly. Update the reference files or SKILL.md as needed. Don't just report issues, correct them.
