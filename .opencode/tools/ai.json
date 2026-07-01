@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-28",
+  "tools": {
+    "opencode": {
+      "status": "works",
+      "failures": 0,
+      "lastTested": "2026-06-28",
+      "success_count": 19,
+      "failure_count": 0
+    },
+    "claude": {
+      "status": "unreliable",
+      "failures": 1,
+      "lastTested": "2026-06-28",
+      "success_count": 6,
+      "failure_count": 4
+    },
+    "gemini": {
+      "status": "works",
+      "failures": 0,
+      "lastTested": "2026-06-28",
+      "success_count": 5,
+      "failure_count": 1
+    },
+    "copilot": {
+      "status": "works",
+      "failures": 0,
+      "lastTested": "2026-06-28",
+      "success_count": 5,
+      "failure_count": 1
+    },
+    "crush": {
+      "status": "broken",
+      "failures": 5,
+      "lastTested": "2026-06-01",
+      "success_count": 0,
+      "failure_count": 5
+    },
+    "codex": {
+      "status": "broken",
+      "failures": 3,
+      "lastTested": "2026-05-17",
+      "success_count": 2,
+      "failure_count": 3
+    },
+    "pi": {
+      "status": "unknown",
+      "failures": 0,
+      "lastTested": null,
+      "success_count": 5,
+      "failure_count": 0
+    },
+    "ollama": {
+      "status": "works",
+      "failures": 0,
+      "lastTested": "2025-05-09",
+      "success_count": 6,
+      "failure_count": 0
+    },
+    "agent": {
+      "status": "works",
+      "success_count": 0,
+      "failure_count": 1,
+      "lastTested": "2026-06-28"
+    },
+    "omp": {
+      "status": "works",
+      "success_count": 1,
+      "failure_count": 0,
+      "lastTested": "2026-06-28"
+    }
+  }
+}
